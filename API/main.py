@@ -7,7 +7,7 @@ app = FastAPI()
 
 encoded_image:str
 
-@app.post("/api/v1/users")
+@app.post()
 async def get_picture(user: User):
     encoded_image = user.base64_string
 
@@ -17,7 +17,7 @@ async def get_picture(user: User):
 
     return {"yes":"bitches"}
 
-@app.get("/api/v1/users")
+@app.get()
 async def recognize_user():
     name = face_recog.face_rec()
 
